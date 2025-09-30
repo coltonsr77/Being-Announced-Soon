@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Coming Soon</title>
   <style>
     body {
@@ -24,7 +24,7 @@
     }
     p {
       font-size: 1.2rem;
-      margin: 5px 0 20px 0;
+      margin: 5px 0 15px 0;
     }
     a {
       color: #1da1f2;
@@ -40,11 +40,17 @@
       color: white;
     }
     #secret-section {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
       margin-top: 20px;
       font-size: 1.5rem;
       font-weight: bold;
       color: #ffcc00;
+      transition: opacity 1.5s ease-in-out, visibility 1.5s;
+    }
+    #secret-section.show {
+      opacity: 1;
+      visibility: visible;
     }
     input[type="password"] {
       padding: 8px;
@@ -79,12 +85,11 @@
   <p id="datetime"></p>
   <a id="x-link" href="#" target="_blank">Follow us on X</a>
 
-  <!-- Secret part -->
   <div id="password-area">
-    <input type="password" id="password" placeholder="Enter password">
+    <input type="password" id="password" placeholder="Enter password" />
     <button onclick="checkPassword()">Unlock</button>
   </div>
-  <div id="secret-section">MD:TF</div>
+  <div id="secret-section">Name of Project: The Future Drones (MIGHT BE CHANGED.)</div>
 
   <script src="index.js"></script>
 </body>

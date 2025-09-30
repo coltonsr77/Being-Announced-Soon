@@ -3,28 +3,42 @@ document.addEventListener("DOMContentLoaded", () => {
   const datetime = document.getElementById("datetime");
   const xLink = document.getElementById("x-link");
 
-  // Main message
-  message.textContent = "🚧 To be announced soon 🚧";
+  message.textContent = "🚧 To be announced soon. 🚧";
 
-  // Date & time (you can edit this string)
-  const eventDate = "October 18, 2025 at 6:00 PM EST";
-  datetime.textContent = `📅 Event Date: ${eventDate}`;
+  // Set your event date & time here
+  const target = new Date("October 4, 2025 18:00:00").getTime();
 
-  // Link to your X account (replace with your username)
-  const xUsername = "SD_COLTON"; // Example
+  const timer = setInterval(() => {
+    const now = new Date().getTime();
+    const distance = target - now;
+
+    if (distance <= 0) {
+      clearInterval(timer);
+      datetime.textContent = "Check the X Account.";
+    } else {
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      datetime.textContent = `📅 Being Announced in: ${days}d ${hours}h ${minutes}m ${seconds}s`;
+    }
+  }, 1000);
+
+  // X link (replace with your username)
+  const xUsername = "being_announced";
   xLink.href = `https://x.com/${xUsername}`;
 });
 
-// Password check
+// Password check for secret
 function checkPassword() {
   const input = document.getElementById("password").value;
   const secretSection = document.getElementById("secret-section");
 
-  // Change this password to whatever you want
-  const correctPassword = "MDPROJECT";
+  const correctPassword = "MDPROJECT"; // change this
 
   if (input === correctPassword) {
-    secretSection.style.display = "block";
+    secretSection.classList.add("show");
   } else {
     alert("❌ Wrong password. Try again!");
   }
