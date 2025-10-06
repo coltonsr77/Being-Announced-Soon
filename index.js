@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const datetime = document.getElementById("datetime");
   const xLink = document.getElementById("x-link");
 
-  message.textContent = "🚧 Website is NOT Up to Date Please Use the New Website. 🚧";
+  message.textContent = "🚧 Website is NOT Up to Date. Please go to the New Website. 🚧";
 
   // Set your event date & time here
   const target = new Date("October 3, 2025 21:00:00").getTime();
