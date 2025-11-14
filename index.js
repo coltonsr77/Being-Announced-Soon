@@ -3,10 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const datetime = document.getElementById("datetime");
   const xLink = document.getElementById("x-link");
 
-  message.textContent = "🚧 Please go to the New Website at (tfdproject.pages.dev) 🚧";
+  message.textContent = "🚧 The Countdown. 🚧";
 
   // Set your event date & time here
-  const target = new Date("October 3, 2025 21:00:00").getTime();
+  const target = new Date("November 15, 2025 21:00:00").getTime();
 
   const timer = setInterval(() => {
     const now = new Date().getTime();
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (distance <= 0) {
       clearInterval(timer);
-      datetime.textContent = "Check the X Account.";
+      datetime.textContent = "All website has been updated!";
     } else {
       const days = Math.floor(distance / (1000 * 60 * 60 * 24));
       const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 1000);
 
   // X link (replace with your username)
-  const xUsername = "md_tfd_project";
+  const xUsername = "SD_COLTON";
   xLink.href = `https://x.com/${xUsername}`;
 });
 
@@ -35,7 +35,7 @@ function checkPassword() {
   const input = document.getElementById("password").value;
   const secretSection = document.getElementById("secret-section");
 
-  const correctPassword = "LASTUPDATE"; // change this
+  const correctPassword = "FINALLYBACK"; // change this
 
   if (input === correctPassword) {
     secretSection.classList.add("show");
